@@ -18,6 +18,26 @@ A private, local RAG (Retrieval-Augmented Generation) agent to chat with your do
 3. **Enrichment:** If local results are sparse, the agent performs live Wikipedia searches for additional context.
 4. **Generation:** Retrieved chunks and web results form a prompt sent to a local LLM via Ollama, which generates the final answer.
 
+## Project Structure
+agent-ollama-research/
+├─ backend/
+│  ├─ server.py              # FastAPI server handling API routes (/ingest, /query)
+│  ├─ ollama_client.py       # Client to communicate with the Ollama server
+│  ├─ retriever.py           # Handles semantic search and retrieval from FAISS/SQLite
+│  ├─ ingest.py              # Logic for processing, chunking, and embedding PDFs
+│  ├─ agent_controller.py    # Orchestrates the RAG workflow (retrieve, enrich, generate)
+│  └─ tools/
+│     ├─ web_search.py       # Tool for performing live web searches (Wikipedia)
+│     └─ summarizer.py       # Tool for building the prompt and generating answers
+├─ frontend/
+│  └─ streamlit_app.py       # The Streamlit frontend web application
+├─ data/
+│  ├─ faiss.index            # Stores the vector embeddings for semantic search (auto-generated)
+│  └─ metadata.db            # SQLite database for storing text chunks (auto-generated)
+├─ README.md                 # This file
+└─ requirements.txt          # Project dependencies
+
+
 ## Tech Stack
 
 * **Backend:** FastAPI, Uvicorn  

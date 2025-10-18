@@ -43,19 +43,19 @@ git clone <your-repository-url>
 cd agent-ollama-research
 ```
 
-**2. Create and Activate a Virtual Environment:
+**2. Create and Activate a Virtual Environment:**
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 ```
-**3. Install Dependencies:
+**3. Install Dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Download an Ollama Model:
+**4. Download an Ollama Model:**
 ```bash
 # Recommended for 8GB RAM
 ollama pull phi3:mini
@@ -65,9 +65,9 @@ ollama pull phi3:mini
 # Recommended for 16GB+ RAM
 ollama pull gemma:9b
 ```
-**Running the Application
+**Running the Application**
 
-**Open two terminals:
+**Open two terminals:**
 
 Backend Server:
 ```bash
@@ -79,11 +79,11 @@ Frontend App:
 streamlit run frontend/streamlit_app.py
 ```
 
-**A browser tab will open with the Streamlit application.
+**A browser tab will open with the Streamlit application.**
 
 **Configuration
 
-**To change the LLM model:
+**To change the LLM model:**
 ```bash
 # backend/ollama_client.py
 class OllamaClient:
@@ -91,4 +91,4 @@ class OllamaClient:
         ...
 ```
 
-**Make sure the model you specify is downloaded with ollama pull <model-name>.
+**Make sure the model you specify is downloaded with ollama pull <model-name>.**

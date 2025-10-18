@@ -19,6 +19,7 @@ A private, local RAG (Retrieval-Augmented Generation) agent to chat with your do
 4. **Generation:** Retrieved chunks and web results form a prompt sent to a local LLM via Ollama, which generates the final answer.
 
 ## Project Structure
+```bash
 agent-ollama-research/
 ├─ backend/
 │  ├─ server.py              # FastAPI server handling API routes (/ingest, /query)
@@ -36,7 +37,7 @@ agent-ollama-research/
 │  └─ metadata.db            # SQLite database for storing text chunks (auto-generated)
 ├─ README.md                 # This file
 └─ requirements.txt          # Project dependencies
-
+```
 
 ## Tech Stack
 
